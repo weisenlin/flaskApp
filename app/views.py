@@ -16,7 +16,12 @@ def hello():
     return jsonify(msg="hello world!")
 
 
-@app.route("/login", methods=["GET",])
+@app.route("/hello/<name>")
+def hello2(name):
+    return "<h1>hello,%s!</h1>" % name;
+
+
+@app.route("/login", methods=["GET", ])
 def login():
     return """
         <form action="" method="POST">
